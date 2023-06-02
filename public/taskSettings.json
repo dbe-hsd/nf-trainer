@@ -1,12 +1,16 @@
 {
   "selectedTasks": [
     {
-      "title": "Skriptverkauf",
-      "fileName": "skriptverkauf"
+      "title": "Wohnungsunternehmen",
+      "fileName": "wohnungsunternehmen"
     },
     {
       "title": "Patienten der Arztpraxis",
       "fileName": "arztpraxis"
+    },
+    {
+      "title": "Skriptverkauf",
+      "fileName": "skriptverkauf"
     },
     {
       "title": "Küchen-Großhändler",
@@ -27,10 +31,6 @@
     {
       "title": "Zimmer im Krankenhaus",
       "fileName": "krankenhaus"
-    },
-    {
-      "title": "Autohändler 2",
-      "fileName": "autohaendler2"
     }
   ]
 }
