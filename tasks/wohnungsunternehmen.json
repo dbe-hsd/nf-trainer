@@ -1,0 +1,163 @@
+{
+  "title": "Wohnung",
+  "description": "Gegeben ist folgender Ausschnitt der Datenbank eines Wohnungsunternehmens. Zum Namen einer Relation und den Attributen werden typische Datensätze angegeben. \n Die Wohnung eines Hauses wird mit der Hausnummer und der Nummer der Wohnung im Haus, außerdem Merkmalen sowie dem Anteil am Gemeinschaftseigentum und dem Eigentümer aufgeführt. ",
+  "tableData": [
+      {
+        "Hausnr": "148",
+        "Wohnungsnr": 1,
+        "Fläche": 41,
+        "Merkmal": "Innenhof",
+        "Anteil": 410,
+        "gehört": 3
+      },
+      {
+        "Hausnr": "148",
+        "Wohnungsnr": 2,
+        "Fläche":39,
+        "Features": "Innenhof",
+        "Anteil": 390,
+        "gehört": 2
+      },
+      {
+        "Hausnr": "148",
+        "Wohnungsnr": 3,
+        "Fläche": 66,
+        "Features": "Innenhof",
+        "Anteil": 660,
+        "gehört": 2
+      },
+      {
+        "Hausnr": "150",
+        "Wohnungsnr": 1,
+        "Fläche": 84,
+        "Features": "Kamin",
+        "Anteil": 840,
+        "gehört": 4
+      },
+      {
+        "Hausnr": "150",
+        "Wohnungsnr": 2,
+        "Fläche": 60,
+        "Features": "Kamin",
+        "Anteil": 600,
+        "gehört": 6
+      }
+  ],
+  "hasViolatingColumns": false,
+  "violatingColumns": [],
+  "functionalDependencies": [
+    {
+      "primaryKeys": ["Hausnr", "Wohnungsnr"],
+      "columns": [
+        "Fläche",
+        "Merkmal",
+        "Anteil",
+        "gehört"
+      ],
+      "type": "voll"
+    },
+    {
+      "primaryKeys": ["Hausnr"],
+      "columns": [
+        "Merkmal"
+      ],
+      "type": "voll"
+    },
+    {
+      "primaryKeys": ["Fläche"],
+      "columns": [
+        "Anteil"
+      ],
+      "type": "transitiv"
+    }
+  ],
+  "primaryKeys": ["Hausnr", "Wohnungsnr"],
+  "secondNormalForm": [
+    {
+      "primaryKeys": ["Hausnr", "Wohnungsnr"],
+      "columns": [
+        "Fläche",
+        "Anteil",
+        "gehört"
+      ]
+    },
+    {
+      "primaryKeys": ["Hausnr"],
+      "columns": ["Merkmal"]
+    }
+  ],
+  "secondFormTableData": [
+    [
+      {
+        "Hausnr": "148",
+        "Wohnungsnr": 1,
+        "Fläche": 41,
+        "Anteil": 410,
+        "gehört": 3
+      },
+      {
+        "Hausnr": "148",
+        "Wohnungsnr": 2,
+        "Fläche":39,
+        "Anteil": 390,
+        "gehört": 2
+      },
+      {
+        "Hausnr": "148",
+        "Wohnungsnr": 3,
+        "Fläche": 66,
+        "Anteil": 660,
+        "gehört": 2
+      },
+      {
+        "Hausnr": "150",
+        "Wohnungsnr": 1,
+        "Fläche": 84,
+        "Anteil": 840,
+        "gehört": 4
+      },
+      {
+        "Hausnr": "150",
+        "Wohnungsnr": 2,
+        "Fläche": 60,
+        "Anteil": 600,
+        "gehört": 6
+      }
+    ],
+    [
+      {
+        "Hausnr": 148,
+        "Merkmal": "Innenhof"
+      },
+      {
+        "Hausnr": 150,
+        "Merkmal": "Kamin"
+      }
+    ]
+  ],
+  "alreadyThirdNormalForm": false,
+  "thirdNormalFormSolutions":
+  [
+    {
+      "primaryKeys": ["Hausnr", "Wohnungsnr"],
+      "columns": ["Fläche", "gehört"]
+    },
+    {
+      "primaryKeys": ["Hausnr"],
+      "columns": ["Merkmal"]
+    },
+    {
+      "primaryKeys": ["Fläche"],
+      "columns": ["Anteil"]
+    }
+  ]
+  ,
+  "hasViolatingColumnsExplanation": "Es existiert kein Attribut, das teilweise mehrere Werte enthält. ",
+  "violatingColumnsExplanation": "",
+  "functionalDependenciesExplanation": "Von Hausnr kombiniert mit Wohnungsnr sind alle anderen Spalten abhängig. Wohnungen an der gleichen Hausnummer haben ein besonderes Merkmal. Der Anteil lässt sich aus der Fläche berechnen.",
+  "primaryKeysExplanation": "Von Hausnr kombiniert mit Wohnungsnr sind alle anderen Spalten abhängig. Wir setzen voraus, dass sich alle Wohnungen in der gleichen Straße befinden. Trotzdem ist die Hausnr allein nicht eindeutig, da es mehr als eine Wohnung pro Hausnummer geben kann.",
+  "functionalDependencyTypesExplanation": "Voll funktionale Abhängigkeiten: Die Nicht-Schlüsselattribute sind nicht nur von einem Teil der Attribute eines zusammengesetzten Schlüsselkandidaten funktional abhängig, sondern von allen Teilen: sowohl von Hausnr als auch von Wohnungsnr. Ein Merkmal wird voll funktional von einem Teil des zusammengesetzen Schlüssels bestimmt: Hausnummer. Voll transitive Abhängigkeit: Der Anteil ist von der Fläche und die Fläche vom Schlüssel abhängig.",
+  "secondNormalFormExplanation": "In der zweiten Normalform sind alle Nicht-Schlüssel-Attribute voll funktional abhängig von Primär- und Kandidatschlüsseln.",
+  "alreadyThirdNormalFormExplanation": "Es existiert eine transitive funktionale Abhängigkeit ausgehend von einem Kandidatschlüssel.",
+  "thirdNormalFormExplanation": "Der Schlüssel Hausnr und Wohnungsnr bestimmt die Fläche. Die Fläche bestimmt den Anteil. Diese voll transitive Abhängigkeit wird aufgelöst."
+}
