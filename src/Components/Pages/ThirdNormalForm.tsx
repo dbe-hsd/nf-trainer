@@ -60,7 +60,7 @@ export default function ThirdNormalForm({ selectedTask, isLoading }: Props) {
           <TrainerSubtaskDescription>
             Bringen Sie das Schema in die dritte Normalform, indem Sie auf die
             entsprechenden Spalten (Primärschlüssel und abhängige Spalten)
-            klicken.
+            klicken. Auch ohne Veränderung einer Tabelle müssen die Beziehungen angegeben werden.
           </TrainerSubtaskDescription>
 
           {/* Task-specific response handler */}
