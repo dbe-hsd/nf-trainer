@@ -154,10 +154,10 @@
   ,
   "hasViolatingColumnsExplanation": "Es existiert kein Attribut, das teilweise mehrere Werte enthält. ",
   "violatingColumnsExplanation": "",
-  "functionalDependenciesExplanation": "Von Hausnr kombiniert mit Wohnungsnr sind alle anderen Spalten abhängig. Wohnungen an der gleichen Hausnummer haben ein besonderes Merkmal. Der Anteil lässt sich aus der Fläche berechnen.",
-  "primaryKeysExplanation": "Von Hausnr kombiniert mit Wohnungsnr sind alle anderen Spalten abhängig. Wir setzen voraus, dass sich alle Wohnungen in der gleichen Straße befinden. Trotzdem ist die Hausnr allein nicht eindeutig, da es mehr als eine Wohnung pro Hausnummer geben kann.",
-  "functionalDependencyTypesExplanation": "Voll funktionale Abhängigkeiten: Die Nicht-Schlüsselattribute sind nicht nur von einem Teil der Attribute eines zusammengesetzten Schlüsselkandidaten funktional abhängig, sondern von allen Teilen: sowohl von Hausnr als auch von Wohnungsnr. Ein Merkmal wird voll funktional von einem Teil des zusammengesetzen Schlüssels bestimmt: Hausnummer. Voll transitive Abhängigkeit: Der Anteil ist von der Fläche und die Fläche vom Schlüssel abhängig.",
+  "functionalDependenciesExplanation": "Von \"Hausnr\" kombiniert mit \"Wohnungsnr\" sind alle anderen Spalten abhängig. Wohnungen an der gleichen Hausnummer haben ein besonderes Merkmal. Der Anteil lässt sich aus der Fläche berechnen.",
+  "primaryKeysExplanation": "Von \"Hausnr\" kombiniert mit \"Wohnungsnr\" sind alle anderen Spalten abhängig. Wir setzen voraus, dass sich alle Wohnungen in der gleichen Straße befinden. Trotzdem ist \"Hausnr\" allein nicht eindeutig, da es mehr als eine Wohnung pro Hausnummer geben kann.",
+  "functionalDependencyTypesExplanation": "Voll funktionale Abhängigkeiten: Die Nicht-Schlüsselattribute sind nicht nur von einem Teil der Attribute eines zusammengesetzten Schlüsselkandidaten funktional abhängig, sondern von allen Teilen: sowohl von \"Hausnr\" als auch von \"Wohnungsnr\". Ein Merkmal wird voll funktional von einem Teil des zusammengesetzen Schlüssels bestimmt: \"Hausnr\". Voll transitive Abhängigkeit: Der \"Anteil\" ist von der \"Fläche\" und die \"Fläche\" vom Schlüssel abhängig.",
   "secondNormalFormExplanation": "In der zweiten Normalform sind alle Nicht-Schlüssel-Attribute voll funktional abhängig von Primär- und Kandidatschlüsseln.",
   "alreadyThirdNormalFormExplanation": "Es existiert eine transitive funktionale Abhängigkeit ausgehend von einem Kandidatschlüssel.",
-  "thirdNormalFormExplanation": "Der Schlüssel Hausnr und Wohnungsnr bestimmt die Fläche. Die Fläche bestimmt den Anteil. Diese voll transitive Abhängigkeit wird aufgelöst."
+  "thirdNormalFormExplanation": "Der Schlüssel \"Hausnr\" und \"Wohnungsnr\" bestimmt die \"Fläche\". Die \"Fläche\" bestimmt den \"Anteil\". Indem  \"Anteil\" mit dem Schlüssel \"Fläche\" in eine dritte Relation ausgelagert wird, enthält keine Relation mehr voll transitive Abhängigkeiten."
 }
